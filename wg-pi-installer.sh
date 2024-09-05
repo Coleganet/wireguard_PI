@@ -420,7 +420,7 @@ function uninstallWg() {
 
 function manageMenu() {
 	echo "Welcome to WireGuard-install!"
-	echo "The git repository is available at: https://github.com/angristan/wireguard-install"
+	echo "The git repository is available at: https://github.com/Coleganet/wireguard_PI"
 	echo ""
 	echo "It looks like WireGuard is already installed."
 	echo ""
