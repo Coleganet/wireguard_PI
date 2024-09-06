@@ -420,7 +420,7 @@ function uninstallWg() {
 
 function manageMenu() {
 	echo "Welcome to WireGuard-install!"
-	echo "The git repository is available at: https://github.com/Coleganet/wireguard_PI"
+	echo "The git repository is available at: https://github.com/angristan/wireguard-install"
 	echo ""
 	echo "It looks like WireGuard is already installed."
 	echo ""
@@ -431,7 +431,7 @@ function manageMenu() {
 	echo "   4) Exit"
 	MENU_OPTION=''
 	until [[ ${MENU_OPTION} =~ ^[1-4]$ ]]; do
-		read -rp "Select an option [1-4]: " MENU_OPTIONiptablesWg
+		read -rp "Select an option [1-4]: " MENU_OPTION
 	done
 	case "${MENU_OPTION}" in
 	1)
@@ -443,7 +443,6 @@ function manageMenu() {
 	3)
 		uninstallWg
 		;;
-      
 	4)
 		exit 0
 		;;
