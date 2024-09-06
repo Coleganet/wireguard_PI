@@ -417,7 +417,13 @@ function uninstallWg() {
 		echo "Removal aborted!"
 	fi
 }
-
+function iptablesWg() {
+	echo ""
+	echo -e "\n${RED}This will show you the Statis of IptablesFirewall!${NC}"
+	echo -e "${ORANGE}Please backup the /etc/wireguard directory if you want to keep your configuration files.\n${NC}"
+        sudo iptables -t nat -L -n -v
+        iptables-save -t nat
+}
 function manageMenu() {
 	echo "Welcome to WireGuard-install!"
 	echo "The git repository is available at: https://github.com/Coleganet/wireguard_PI"
@@ -431,7 +437,7 @@ function manageMenu() {
 	echo "   4) Exit"
 	MENU_OPTION=''
 	until [[ ${MENU_OPTION} =~ ^[1-4]$ ]]; do
-		read -rp "Select an option [1-4]: " MENU_OPTION
+		read -rp "Select an option [1-4]: " MENU_OPTIONiptablesWg
 	done
 	case "${MENU_OPTION}" in
 	1)
@@ -443,7 +449,10 @@ function manageMenu() {
 	3)
 		uninstallWg
 		;;
-	4)
+        4)      
+	        iptablesWg
+	        ;;
+	5)
 		exit 0
 		;;
 	esac
