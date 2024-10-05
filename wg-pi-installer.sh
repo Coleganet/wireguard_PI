@@ -138,7 +138,7 @@ function installWireGuard() {
 	        sudo freshclam
 	        sudo systemctl start clamav-freshclam
                 sudo systemctl enable clamav-freshclam
-		sudo clamscan -r /
+		##$$$ sudo clamscan -r /
                 echo "Please check is not any risk or any infection."
 	        read -n1 -r -p "Press any key to continue for install Rkhunter..."
 		sudo apt-get install rkhunter
