@@ -148,7 +148,7 @@ function installWireGuard() {
 		echo "You will be able to update de Database of Rkhunter for check for any infection."
 	        read -n1 -r -p "Press any key to continue and install Chkrootkit..."
 	        sudo apt-get install chkrootkit
-	        sudo chkrootkit
+	        ### sudo chkrootkit
 	        sudo cat /var/log/rkhunter.log | grep -i warning
 	        echo "You will be able to update de Database of Chkrootkit for check for any infection."
 	        read -n1 -r -p "Press any key to continue and install with Wireguard..."
