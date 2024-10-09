@@ -13,6 +13,12 @@ WireGuard uses ChaCha20Poly1305, which is extremely fast in software on virtuall
     2 Pi Node app uptime (power or internet disconnection affects this time).
     3 Having ports 31400-31409 open.**
 
+**Pi is a new digital currency developed by Stanford PhDs, with over 55 million members worldwide. 
+To claim your Pi, 
+follow this link https://minepi.com/coleganet and use my username (coleganet) as your invitation code.**
+
+
+
 **You earn bonus according to these 3 criteria and you can earn more pi accordingly. Having a very high RAM or internet speed does not add much extra bonus. Enough RAM and a stable internet line that is not too slow is sufficient.**
 
 **Is it important to open a port?**
