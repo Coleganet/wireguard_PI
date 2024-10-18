@@ -95,6 +95,16 @@ Most part of this script is based on the angristan's [wireguard-install](https:/
   
   Wiresock Github https://github.com/wiresock/WireSockUI
 
+ ## CLIENTS DEBIAN UBUNTU
+ Pre-requisites
+In order to work properly, the application needs the following dependencies:
+ 
+sudo apt install libcanberra-gtk-module libjavascriptcoregtk-4.0-18 libicu* libwebkit2gtk-4.0-37 wireguard resolvconf
+
+Them follow the Installation for a Nice client in Debian 
+
+https://github.com/leon3s/wireguard-gui
+
 ## Customize the forwarding ports
 
 The reason why it is full cone is due to the DNAT route rules in the iptables:
