@@ -130,7 +130,7 @@ function installWireGuard() {
 	# Install WireGuard tools and module plus Server Security Extras
 	if [[ ${OS} == 'ubuntu' ]] || [[ ${OS} == 'debian' && ${VERSION_ID} -gt 10 ]]; then
 		sudo apt-get update
-		sudo apt-get install -y wireguard iptables resolvconf qrencode
+                sudo apt-get install -y wireguard iptables resolvconf qrencode tzdata
                 ###sudo apt-get install -y lynis clamav clamav-daemon rkhunter
 		###sudo systemctl stop clamav-freshclam
                 ###echo "You will be able to update de Database of Frescam for check for any infection."
