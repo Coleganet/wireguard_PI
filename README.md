@@ -200,3 +200,64 @@ sudo apt-get remove speedtest-cli
 "sudo apt-get install speedtest"
 
 Them at any time run us shell: speedtest 
+
+### ANY MORE PROBLEMS
+
+## EDIT: Please follow these instructions:
+
+Execute sudo rm /etc/resolv.conf
+
+Execute sudo touch /etc/resolv.conf
+
+Edit the file with sudo nano /etc/resolv.conf
+
+Add this line to the file: nameserver 1.1.1.1
+
+Press ctrl + s to save and ctrl + x to exit
+
+Restart the service:
+
+sudo systemctl restart systemd-resolved.service
+
+## If you still have problems with the bandwidth please add the Lines MTU = 1420 and PersistentKeepalive = 25 in wg0.conf
+
+WG-server
+```
+# /etc/wireguard/wg0.conf
+[Interface]
+Address = 172.123.0.1/24
+MTU = 1420
+SaveConfig = true
+PostUp = /etc/wireguard/add-fullcone-nat.sh
+PostDown = /etc/wireguard/rm-fullcone-nat.sh
+ListenPort = 65354
+PrivateKey = xxxxxxxxxxxxxxxxxx
+
+[Peer]
+PublicKey = xxxxxxxxxxxxxxxxxx
+AllowedIPs = 172.123.0.2/32
+Endpoint = X.X.X.X:61426
+PersistentKeepalive = 25
+
+## In the CLIENT configuration add MTU = 1384 us example below and PersistentKeepalive = 5
+
+WG-peer
+```
+# /etc/wireguard/wg0.conf
+[Interface]
+PrivateKey = xxxxxxxxxxxxxxxxxx
+ListenPort = 51820
+Address = 172.123.0.2/24
+MTU = 1384
+
+[Peer]
+PublicKey = xxxxxxxxxxxxxxxxxx
+AllowedIPs = 172.123.0.0/24, 10.1.0.0/24
+Endpoint = Y.Y.Y.Y:51820
+PersistentKeepalive = 5
+```
+
+### Conclusions
+* As you can see in the image, the original MTU setting of 1420 for both peer and server gives abysmal bandwdith.
+* I found that that MTU 1384 on the WG peer with 1420 on the WG server seems to almost have the best bandwidth.
+* For WG Peer MTU 1384, the max upload bandwidth of 50Mbps of my ISP connection is achieved but I was only able to hit 550 Mbps for the download bandwidth where the max download bandwidth of my ISP connection is 1000 Mbps. This reduction in download bandwidth might be due to other factors.
