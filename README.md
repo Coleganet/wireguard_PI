@@ -239,10 +239,10 @@ AllowedIPs = 172.123.0.2/32
 Endpoint = X.X.X.X:61426
 PersistentKeepalive = 25
 
-## In the CLIENT configuration add MTU = 1384 us example below and PersistentKeepalive = 5
+# In the CLIENT configuration add MTU = 1384 us example below and PersistentKeepalive = 5
 
-WG-peer
-```
+# WG-peer
+
 # /etc/wireguard/wg0.conf
 
 [Interface]
@@ -256,7 +256,7 @@ PublicKey = xxxxxxxxxxxxxxxxxx
 AllowedIPs = 172.123.0.0/24, 10.1.0.0/24
 Endpoint = Y.Y.Y.Y:51820
 PersistentKeepalive = 5
-```
+
 
 ### Conclusions
 * As you can see in the image, the original MTU setting of 1420 for both peer and server gives abysmal bandwdith.
