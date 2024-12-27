@@ -244,6 +244,7 @@ PersistentKeepalive = 25
 WG-peer
 ```
 # /etc/wireguard/wg0.conf
+
 [Interface]
 PrivateKey = xxxxxxxxxxxxxxxxxx
 ListenPort = 51820
