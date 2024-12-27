@@ -225,7 +225,8 @@ WG-server
 ```
 # /etc/wireguard/wg0.conf
 [Interface]
-Address = 172.123.0.1/24
+Address = 10.x.x.1/24
+Address = fd42:x:xx::1/64
 MTU = 1420
 SaveConfig = true
 PostUp = /etc/wireguard/add-fullcone-nat.sh
