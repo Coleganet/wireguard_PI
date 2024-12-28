@@ -205,6 +205,11 @@ Them at any time run us shell: speedtest
 
 ## EDIT: Please follow these instructions:
 
+Modern Linux distros use systemd-resolved. Therefore, the /etc/resolv.conf file is a symbolic link managed by systemd-resolved. This means the file is dynamically generated and should be edited manually. You can still edit them manually, but the changes are  permanent if you follow the next example:
+
+1. Access /etc/resolv/conf using a text editor. For example, we use Nano:
+
+
 Execute sudo rm /etc/resolv.conf
 
 Execute sudo touch /etc/resolv.conf
