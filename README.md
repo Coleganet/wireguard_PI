@@ -226,6 +226,8 @@ sudo systemctl restart systemd-resolved.service
 
 ## If you still have problems with the bandwidth please add the Lines MTU = 1420 and PersistentKeepalive = 25 in wg0.conf
 
+First Calculate your MTU follow this document https://github.com/Coleganet/wireguard_PI/blob/main/MTU.md
+
 WG-server
 ```
 # /etc/wireguard/wg0.conf
@@ -246,6 +248,7 @@ Endpoint = X.X.X.X:61426
 PersistentKeepalive = 25
 
 # In the CLIENT configuration add MTU = 1384 us example below and PersistentKeepalive = 5
+You just change the value according to the previous test
 
 # WG-peer
 
